@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Come Dine with Us</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Come Dine with Us</h1>
+            <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
+            <hr>
+            <a href="/api/reserve"><button class="btn btn-danger btn-lg"><span
+                class="fa fa-plus"></span> Make Reservation</button></a>
+            <a href="/"><button class="btn btn-danger btn-lg"><span
+                class="fa fa-home"></span> Home</button></a>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Current Reservations
+            </div>
+            <div class="card-body" id="reservation-list-body">
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Waiting List
+            </div>
+            <div class="card-body" id="wait-list-body">
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function fetchWaitList() {
+        $.get("/api/tables/waitList", function(data) {
+
+            data.forEach((element, index) => {
+                console.log(element);
+                let count = index + 1;
+                $("#wait-list-body").append($("<div>").text(` ${count} | ${element.identification} | ${element.name}`))
+            });
+        })
+    }
+
+    fetchWaitList();
+    // fetchReservationList();
+</script>
+
+</html>
