@@ -55,15 +55,26 @@
         $.get("/api/tables/waitList", function(data) {
 
             data.forEach((element, index) => {
-                console.log(element);
                 let count = index + 1;
-                $("#wait-list-body").append($("<div>").text(` ${count} | ${element.identification} | ${element.name}`))
+                $("#wait-list-body").append($("<div>").text(` ${count} | ${element.uniqueId} | ${element.name}`))
+            });
+        })
+    }
+
+    function fetchReservationList() {
+        $.get("/api/tables/reservationList", function(data) {
+
+            data.forEach((element, index) => {
+                let count = index + 1;
+                const reserveItem = $("<div>");
+                reserveItem.text(` ${count} | ${element.uniqueId} | ${element.name}`);
+                $("#reservation-list-body").append(reserveItem);
             });
         })
     }
 
     fetchWaitList();
-    // fetchReservationList();
+    fetchReservationList();
 </script>
 
 </html>

@@ -47,7 +47,6 @@ server.get("/api/tables/waitList", function(request, response) {
 });
 
 server.get("/api/tables/reservationList", function(request, response) {
-    console.log(JSON.stringify(reservationList.slice(0, availableTables)))
     response.json(reservationList.slice(0, availableTables));
 });
 

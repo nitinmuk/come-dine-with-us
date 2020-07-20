@@ -8,7 +8,9 @@
     <!-- Latest compiled and minified CSS & JS -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -22,9 +24,9 @@
             <h1>Come Dine with Us</h1>
             <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
             <hr>
-            <a href="/api/tables"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
-            <a href="/"><button class="btn btn-danger btn-lg"><span
-                class="fa fa-home"></span> Home</button></a>
+            <a href="/api/tables"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View
+                    Tables</button></a>
+            <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-home"></span> Home</button></a>
         </div>
 
         <div class="card">
@@ -72,11 +74,11 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $("#submit").on("click", function() {
+        $(document).ready(function () {
+            $("#submit").on("click", function () {
                 event.preventDefault();
-
-                $.post("/api/reserve", function(data) {
+                reservation = prepareRequestData();
+                $.post("/api/reserve", reservation, function (data) {
                     if (data.booked) {
                         $("#booking-status-header").text("Sucess!");
                         $("#booking-status-content").text("Your table is booked!");
@@ -90,6 +92,14 @@
 
                 $("#booking-form").trigger("reset");
             });
+            const prepareRequestData = () => {
+                request = {};
+                request.name = $("#name").val()
+                request.contact = $("#contact").val();
+                request.email = $("#email").val();
+                request.uniqueId = $("#unique-id").val();
+                return request;
+            }
 
         });
     </script>
