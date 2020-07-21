@@ -75,7 +75,7 @@
 
             data.forEach((element, index) => {
                 let count = index + 1;
-                $("#wait-list-body").append($(`
+                $("#wait-list-body").append($`
                 <div class="card-title">
                     <h5>Waiting Position: <b>${count}</b></h5>
                 </div>
@@ -83,7 +83,7 @@
                     <div>Booking ID: ${element.uniqueId}</div>
                     <div>Booking Holder: ${element.name}</div>
                 </div>
-                <br>`));
+                <br>`);
             });
         })
     }
@@ -93,7 +93,7 @@
 
             data.forEach((element, index) => {
                 let count = index + 1;
-                const reserveItem = $(`
+                $("#reservation-list-body").append(`
                 <div class="card-title">
                         <h5>Table Number: <b>${count}</b></h5>
                 </div>
@@ -101,15 +101,7 @@
                     <div>Booking ID: ${element.uniqueId}</div>
                     <div>Booking Holder: ${element.name}</div>
                 </div>
-                <br>
-        
-        `);
-                // const tableNumber = $(`<div>Table Number: ${count}</div>`);
-                // const tableID = $(`<div>Booking ID: ${element.uniqueId}</div>`);
-                // const tableName = $(`<div>Booking Holder: ${element.name}</div>`);
-                // reserveItem.append(tableNumber, tableID, tableName);
-                console.log(reserveItem);
-                $("#reservation-list-body").append(reserveItem);
+                <br>`);
             });
         })
     }
