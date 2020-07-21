@@ -66,22 +66,21 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
     </div>
 </body>
 
 <script type="text/javascript">
     function fetchWaitList() {
         $.get("/api/tables/waitList", function (data) {
-
+            console.log("waitig..")
             data.forEach((element, index) => {
                 let count = index + 1;
-                $("#wait-list-body").append($`
+                $("#wait-list-body").append(`
                 <div class="card-title">
-                    <h5>Waiting Position: <b>${count}</b></h5>
-                </div>
-                <div class="card-text">
-                    <div>Booking ID: ${element.uniqueId}</div>
-                    <div>Booking Holder: ${element.name}</div>
+                        <h5>Waiting Position: <b>${count}</b></h5><div>Booking ID: ${element.uniqueId}   <b>|</b>   Booking Holder: ${element.name}</div>
                 </div>
                 <br>`);
             });
@@ -95,11 +94,7 @@
                 let count = index + 1;
                 $("#reservation-list-body").append(`
                 <div class="card-title">
-                        <h5>Table Number: <b>${count}</b></h5>
-                </div>
-                <div class="card-text">
-                    <div>Booking ID: ${element.uniqueId}</div>
-                    <div>Booking Holder: ${element.name}</div>
+                        <h5>Table Number: <b>${count}</b></h5><div>Booking ID: ${element.uniqueId}   <b>|</b>   Booking Holder: ${element.name}</div>
                 </div>
                 <br>`);
             });
