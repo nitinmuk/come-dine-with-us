@@ -9,20 +9,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        .jumbotron {
+            padding-top: 25px;
+        }
+        h1 {
+           color: rgb(134, 155, 194);
+           font-family: 'Reenie Beanie', cursive;
+           font-size: 100px;
+        }
+        .btn {
+            background-color: rgb(134, 155, 194);
+            color: #ffff
+        }
 
-
+        .card-header {
+            background-color: #e9ecef;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron text-center">
             <h1>Come Dine with Us</h1>
-            <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
             <hr>
-            <a href="/api/tables"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
-            <a href="/api/reserve"><button class="btn btn-danger btn-lg"><span
-                class="fa fa-plus"></span> Make Reservation</button></a>
+            <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
+            <br>
+            <a href="/api/tables"><button class="btn btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
+            <a href="/api/reserve"><button class="btn btn-lg"><span class="fa fa-plus"></span> Make Reservation</button></a>
         </div>
     </div>
 

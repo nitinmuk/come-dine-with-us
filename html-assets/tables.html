@@ -8,28 +8,44 @@
     <!-- Latest compiled and minified CSS & JS -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        .jumbotron {
+            padding-top: 25px;
+        }
+        h1 {
+           color: rgb(134, 155, 194);
+           font-family: 'Reenie Beanie', cursive;
+           font-size: 100px;
+        }
+        .btn {
+            background-color: rgb(134, 155, 194);
+            color: #ffff
+        }
 
-
+        .card-header {
+            background-color: #e9ecef;
+        }
+    </style>
 
 </head>
 
 <body>
 
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron text-center">
             <h1>Come Dine with Us</h1>
-            <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
             <hr>
-            <a href="/api/reserve"><button class="btn btn-danger btn-lg"><span
-                class="fa fa-plus"></span> Make Reservation</button></a>
-            <a href="/"><button class="btn btn-danger btn-lg"><span
-                class="fa fa-home"></span> Home</button></a>
+            <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
+            <br>
+            <a href="/api/reserve"><button class="btn btn-lg"><span class="fa fa-plus"></span> Make Reservation</button></a>
+            <a href="/"><button class="btn btn-lg"><span class="fa fa-home"></span> Home</button></a>
         </div>
 
         <div class="card">
-            <div class="card-header">
+            <div class="card-header font-weight-bold">
                 Current Reservations
             </div>
             <div class="card-body" id="reservation-list-body">
@@ -37,9 +53,9 @@
 
             </div>
         </div>
-
+        <br>
         <div class="card">
-            <div class="card-header">
+            <div class="card-header font-weight-bold">
                 Waiting List
             </div>
             <div class="card-body" id="wait-list-body">
